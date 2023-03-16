@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<section>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <figure class="text-center">
+                <h1 style="font-family: Optima,sans-serif" class="text-muted">DESIGN MOOBOARD</h1>
+            </figure>
+        </div>
+        <div class="col"></div>
+    </div>
+    <form action="/selectpage" method="post">
+        <div class="row row-cols-1 row-cols-md-4 g-4" style="margin-left: 3px; margin-right: 3px">
+            {% for i in img %}
+            <a> <div class="col">
+                <div class="card">
+                    <img src = {{i}} class="card-img-top" width = 300 height = 400>
+                    <div class="card-body">
+                        <div class="form-check">
+                            <input class="form-check-input lead" style="background-color: #D0C6BC; border-color: #4E3E2F" type="checkbox" value={{i}} id="flexCheckDefault" name =card>
+                            <label for="form"></label>
+                        </div>
+                    </div>
+                </div>
+            </div> </a>
+            {% endfor %}
+            <p><input class="btn btn-primary btn-sm" style="position: absolute;padding: 10px 20px; border-radius: 5px; background-color: #514A3A; border-color: #5C543D" type="submit" class="form-control" name = "submit4" value="CREATE MOODBOARD"></p>
+        </div>
+    </form>
+    </div>
+</section>
+{% endblock %}
